@@ -18,7 +18,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::all();
+        //return Post::all();
+        return view('post', [
+            'title' => 'List all my posts',
+            'posts' => Post::all()
+        ]);
     }
 
     /**
