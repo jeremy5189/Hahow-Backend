@@ -32,3 +32,5 @@ Route::get('/home', 'HomeController@index');
 Route::get('/user', 'UserController@index');
 Route::get('/user/delete/{id}', 'UserController@destroy');
 Route::post('/user', 'UserController@store');
+
+Route::get('/products', 'ProductController@list');
