@@ -16,13 +16,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //return Post::all();
-        return view('post', [
-            'title' => 'List all my posts',
-            'posts' => Post::all()
-        ]);
+        return Post::simplePaginate(10);
     }
 
     /**
