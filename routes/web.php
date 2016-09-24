@@ -34,3 +34,6 @@ Route::get('/user/delete/{id}', 'UserController@destroy');
 Route::post('/user', 'UserController@store');
 
 Route::get('/products', 'ProductController@list');
+Route::get('/products/add_cart/{id}', 'ProductController@add_cart');
+Route::get('/products/list_cart', 'ProductController@list_cart');
+Route::get('/cart', 'ProductController@cart');

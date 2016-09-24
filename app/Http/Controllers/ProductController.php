@@ -24,6 +24,36 @@ class ProductController extends Controller
         return view('product-list');
     }
 
+    public function add_cart(Request $request, $id) {
+
+        $prev = $request->session()->get('cart');
+        $arr  = [];
+
+        if( $prev != null ) {
+            $arr = json_decode($prev);
+        }
+
+        $arr[] = $id;
+        $request->session()->put('cart', json_encode($arr));
+
+        return [
+            'status' => true
+        ];
+    }
+
+    public function list_cart(Request $request) {
+        $id_list = json_decode($request->session()->get('cart'));
+        $prod_list = [];
+        foreach($id_list as $id) {
+            $prod_list[] = Product::find($id);
+        }
+        return $prod_list;
+    }
+
+    public function cart() {
+        return view('cart');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
