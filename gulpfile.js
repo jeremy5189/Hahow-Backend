@@ -18,6 +18,7 @@ elixir(mix => {
     mix.sass('app.scss')
        .webpack('app.js');
 
+    // 以 resources/assets/js 為基礎
     mix.scripts([
         '../bower/bootbox.js/bootbox.js'
     ], 'public/js/lib.js');

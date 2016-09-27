@@ -16,8 +16,8 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
+    public function index(Request $request) {
+        // Laravel 分頁功能（每頁 10 item)
         return Post::simplePaginate(10);
     }
 

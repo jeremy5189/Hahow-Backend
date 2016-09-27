@@ -20,8 +20,7 @@ $(function() {
         for( var index in resp ) {
             var obj = resp[index];
             $('#tbody').append('<tr><td>' + obj.id + '</td><td>'+obj.name+'</td><td>'+obj.price+'</td>' +
-                                '<td><button data-id="' + obj.id  + '" class="btn btn-sm btn-primary btn-add-cart">加入購物車</button></td></tr>'
-        );
+                                '<td><button data-id="' + obj.id  + '" class="btn btn-sm btn-primary btn-add-cart">加入購物車</button></td></tr>');
         }
     });
 });

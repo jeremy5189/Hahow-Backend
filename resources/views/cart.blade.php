@@ -4,12 +4,16 @@
 <script>
 $(function() {
 
+    // 發起 AJAX 要求
     $.getJSON('/products/list_cart', function(resp) {
+
         for( var index in resp ) {
+
             var obj = resp[index];
+
+            // 將資料加入 table 中
             $('#tbody').append('<tr><td>' + obj.id + '</td><td>'+obj.name+'</td><td>'+obj.price+'</td>' +
-                                '</tr>'
-        );
+                                '</tr>');
         }
     });
 });

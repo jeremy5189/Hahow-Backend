@@ -14,26 +14,31 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         return Product::all();
     }
 
-    public function list()
-    {
+    public function list() {
         return view('product-list');
     }
 
     public function add_cart(Request $request, $id) {
 
+        // 取得已經存在 session 的資料
         $prev = $request->session()->get('cart');
+
+        // 預設 arr 為空
         $arr  = [];
 
+        // 如果 prev 已經含有資料 則先 decode 到 arr
         if( $prev != null ) {
             $arr = json_decode($prev);
         }
 
+        // 從尾部新增內容（ 同 push )
         $arr[] = $id;
+
+        // 存回 Session
         $request->session()->put('cart', json_encode($arr));
 
         return [
@@ -42,11 +47,17 @@ class ProductController extends Controller
     }
 
     public function list_cart(Request $request) {
+
+        // 取得 session 裡面的資料
         $id_list = json_decode($request->session()->get('cart'));
+
         $prod_list = [];
+
+        // 根據 Product ID 取得每筆商品資料
         foreach($id_list as $id) {
             $prod_list[] = Product::find($id);
         }
+
         return $prod_list;
     }
 

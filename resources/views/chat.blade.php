@@ -5,6 +5,7 @@
 
     $(function() {
 
+        // 設定 1 秒後執行 getUpdate
         setTimeout(getUpdate, 1000);
 
         // 偵測 Form 送出事件
@@ -32,6 +33,7 @@
 
     function getUpdate() {
 
+        // 取得所有聊天記錄
         $.get('/chat/all', {}, function(resp) {
             console.log(resp);
             var str = '';
@@ -42,6 +44,7 @@
             $('#chat-disp').val(str);
         });
 
+        // 設定 1 秒後再呼叫一次自己
         setTimeout(getUpdate, 1000);
     }
 
