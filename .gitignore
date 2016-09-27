@@ -5,3 +5,7 @@
 Homestead.json
 Homestead.yaml
 .env
+/resources/assets/bower
+/public/js/app.js
+/public/js/lib.js
+/public/js/lib.js.map

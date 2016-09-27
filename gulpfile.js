@@ -14,6 +14,11 @@ require('laravel-elixir-vue');
  */
 
 elixir(mix => {
+
     mix.sass('app.scss')
        .webpack('app.js');
+
+    mix.scripts([
+        '../bower/bootbox.js/bootbox.js'
+    ], 'public/js/lib.js');
 });

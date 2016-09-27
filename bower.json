@@ -1,0 +1,21 @@
+{
+  "name": "HahowDemoProject",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Jeremy Yen <jeremy5189@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootbox.js": "bootbox#^4.4.0"
+  }
+}
