@@ -81,7 +81,8 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <!--script src="/js/app.js"></script-->
+    <script src="https://cdn.jsdelivr.net/vue/1.0.27/vue.min.js"></script>
     @yield('script')
 </body>
 </html>
