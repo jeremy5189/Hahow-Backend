@@ -1,14 +1,7 @@
 @extends('layouts.app')
 
 @section('script')
-<script type="text/javascript">
-    new Vue({
-        el: 'body',
-        data: {
-            title: 'Hello Vue.js!'
-        }
-    });
-</script>
+
 @endsection
 
 @section('content')
