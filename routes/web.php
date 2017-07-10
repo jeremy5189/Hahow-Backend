@@ -40,4 +40,5 @@ Route::get('/cart', 'ProductController@cart');
 
 Route::get('/chat', 'ChatController@index');
 Route::get('/chat/all', 'ChatController@all');
+Route::get('/chat/all_better', 'ChatController@all_better');
 Route::post('/chat', 'ChatController@create');
